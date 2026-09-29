@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deploy
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      labels:
+        env: dev
+    spec:
+      containers:
+        - name: demo
+          image: demo:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 1103
