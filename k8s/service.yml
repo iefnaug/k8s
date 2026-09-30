@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+  namespace: dev
+spec:
+#  type: NodePort
+  ports:
+  - port: 1103
+#    nodePort: 31103
+  selector:
+    env: dev

@@ -1,0 +1,10 @@
+# middleware.yaml
+apiVersion: traefik.io/v1alpha1   # 重点！新版是 traefik.io，不是containo.us
+kind: Middleware
+metadata:
+  name: strip-api
+  namespace: dev
+spec:
+  stripPrefix:
+    prefixes:
+      - /api
